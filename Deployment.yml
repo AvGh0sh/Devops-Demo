@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: avgh
+spec:
+   replicas: 2
+   selector:     
+    matchLabels:
+     app: avgh
+   template:
+      metadata:
+        labels:
+          app: avgh
+      spec:
+       containers:
+        - name: avgh
+          image: avikghosh87/devopsdemo
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
